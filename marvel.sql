@@ -50,6 +50,7 @@ INSERT INTO movies (title, year, show_time) VALUES ('Spider-Man: Homecoming', 20
 INSERT INTO movies (title, year, show_time) VALUES ('Thor: Ragnarok', 2017, '22:10');
 INSERT INTO movies (title, year, show_time) VALUES ('Black Panther', 2018, '21:00');
 
+-- ## Questions
 -- 1.  Return ALL the data in the 'movies' table.
 SELECT * FROM movies;
 -- 2.  Return ONLY the name column from the 'people' table
@@ -69,3 +70,11 @@ INSERT INTO movies (title, year, show_time) VALUES ('Avengers: Infinity War', 20
 -- 9.  The cinema would like to make the Iron Man movies a triple billing. Find out the show time of "Iron Man 2" and set the show time of "Iron Man 3" to start two hours later.
 SELECT show_time FROM movies WHERE title = 'Iron Man 2';
 UPDATE movies SET show_time = '20:45' WHERE title = 'Iron Man 3';
+
+-- ## Extension
+-- 1.  Research how to delete multiple entries from your table in a single command.
+DELETE FROM people WHERE name = 'Marge Simpson' OR name = 'Lisa Simpson';  -- delete more than one person
+DELETE FROM movies WHERE title LIKE 'Iron%';    -- delete all movies that start iron
+DELETE FROM movies WHERE year = 2017;    -- Deletes all movies from 2017
+DELETE FROM movies WHERE year <> 2017;			-- Deletes all movies except those from 2017
+DELETE FROM movies WHERE year = 2017 AND show_time LIKE '2%';  -- deletes all movies from 2017 starting after 10pm
